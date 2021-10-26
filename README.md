@@ -5,4 +5,4 @@ Have finished maven building, integration of Mybatis and Spring Boot, Database C
 
 Future features may include: 
 File service, Administrator service, Content managing, Author page, Details page, 
-Comment module(Redis,mongodb), freemarker, Async(Message Queue), Microservice(spring-cloud)
+Comment module(Redis,mongodb), freemarker, Async(Message Queue), Microservice(spring-cloud), Load balancing.
