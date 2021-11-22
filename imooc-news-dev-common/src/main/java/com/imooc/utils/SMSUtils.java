@@ -1,5 +1,8 @@
 package com.imooc.utils;
 
+import static com.imooc.utils.Constants.ACCESS_KEY_ID;
+import static com.imooc.utils.Constants.ACCESS_KEY_SECRET;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import com.aliyun.tea.*;
@@ -18,9 +21,6 @@ public class SMSUtils {
   @Autowired
   public AliyunResource aliyunResource;
 
-  public static final String ACCESS_KEY_ID = "LTAI5tD8ithaHjMFae37ZPWg";
-
-  public static final String ACCESS_KEY_SECRET = "nrf7kOxEUicupjlWdQ126RlzogbOD2";
 
   public static com.aliyun.dysmsapi20170525.Client createClient(String accessKeyId, String accessKeySecret) throws Exception {
     Config config = new Config()
