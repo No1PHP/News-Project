@@ -1,8 +1,5 @@
 package com.imooc.utils;
 
-import static com.imooc.utils.Constants.ACCESS_KEY_ID;
-import static com.imooc.utils.Constants.ACCESS_KEY_SECRET;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import com.aliyun.tea.*;
@@ -33,9 +30,13 @@ public class SMSUtils {
     return new com.aliyun.dysmsapi20170525.Client(config);
   }
 
-  public void sendSMS() throws Exception {
-    com.aliyun.dysmsapi20170525.Client client = SMSUtils.createClient(ACCESS_KEY_ID, ACCESS_KEY_SECRET);
-    SendSmsRequest sendSmsRequest = new SendSmsRequest();
+  public void sendSMS(String code, String phoneNum) throws Exception {
+    com.aliyun.dysmsapi20170525.Client client = SMSUtils.createClient(
+        aliyunResource.getAccessKeyID(), aliyunResource.getAccessKeySecret());
+    SendSmsRequest sendSmsRequest = new SendSmsRequest()
+        .setPhoneNumbers(phoneNum)
+        .setTemplateCode("SMS_228142910")
+        .setTemplateParam(code);;
     client.sendSms(sendSmsRequest);
   }
 
